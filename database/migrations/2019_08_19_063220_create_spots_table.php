@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('spots', function (Blueprint $table) {
             $table->id(); 
             $table->string('name');
+            $table->unsignedBigInteger('regional_id');
             $table->text('address');
             $table->integer('serve');
             $table->integer('capacity');
             $table->timestamps();
-            // $table->unsignedBigInteger('regional_id');
 
-            $table->foreignId('regional_id')->constrained()->onDelete('cascade');
+            $table->foreign('regional_id')->references('id')->on('regionals')->onDelete('cascade');
         });
     }
 
