@@ -22,10 +22,11 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female']);
             $table->text('address');
             $table->unsignedBigInteger('regional_id');
-            $table->text('login_tokens');
+            $table->rememberToken();
             $table->timestamps();
 
             $table->foreign( 'regional_id' )->references('id')->on('regionals')->onDelete('cascade');
+            
         });
     }
 

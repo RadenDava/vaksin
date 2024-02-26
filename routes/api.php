@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\RegionalController;
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\ConsultationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +44,8 @@ use App\Http\Controllers\Api\RegionalController;
 // });
 
 
-// Route::post('/auth/login', [AuthController::class,'login']);
+Route::post('/auth/login', [AuthController::class, 'login']);
 
 Route::get('/regional', [RegionalController::class, 'index']);
+Route::post('/consultations', [ConsultationController::class, 'store']);
 

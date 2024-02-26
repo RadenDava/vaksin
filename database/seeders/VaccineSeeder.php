@@ -16,7 +16,7 @@ class VaccineSeeder extends Seeder
     public function run()
     {
         
-        DB::table( 'users' )->insert([
+        DB::table( 'vaccines' )->insert([
 
             [
                 'name' => 'sinovac'
